@@ -55,9 +55,10 @@ class QueryTestsController extends ControllerBase {
   public function allRevisionsTest($search_str = 'test') {
 
     $query = $this->entityTypeManager()->getStorage('node')->getQuery('AND');
-    // Yes I know we should use this string directly
+
     // Since Terms are not revisionable this will currently through an error.
     $query->condition('field_tags.entity.name', $search_str);
+    // Yes I know, we should NOT use $search_str directly with out checking it.
     $query->allRevisions();
     $ids = $query->execute();
     debug($ids);
@@ -69,7 +70,7 @@ class QueryTestsController extends ControllerBase {
 
   /**
    * Demonstrating expected error if allRevisions() is used on non-revisionable entity.
-   * 
+   *
    * @return array
    */
   public function nonRevisionableTest() {
