@@ -1,0 +1,16 @@
+
+core_test.all_revision_test:
+  path: '/core_test/allRevisionsTest/{search_str}'
+  defaults:
+    _controller: '\Drupal\core_test\Controller\QueryTestsController::allRevisionsTest'
+    _title: 'Query All Revisions Test'
+  requirements:
+    _permission: 'access content'
+
+core_test.non_revisionable:
+  path: '/core_test/non-revisionable'
+  defaults:
+    _controller: '\Drupal\core_test\Controller\QueryTestsController::nonRevisionableTest'
+    _title: 'Query Non Revisionable'
+  requirements:
+    _permission: 'access content'

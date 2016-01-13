@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains core_test.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function core_test_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the core_test module.
+    case 'help.page.core_test':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Testing core bugs') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function core_test_theme() {
+  $theme = [];
+
+  return $theme;
+}

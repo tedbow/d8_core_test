@@ -1,0 +1,8 @@
+name: Core Test
+type: module
+description: Testing core bugs
+core: 8.x
+package: Other
+dependencies:
+  - entity_reference
+  - node
